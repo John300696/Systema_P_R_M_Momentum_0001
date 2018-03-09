@@ -1,0 +1,272 @@
+﻿ 
+body {
+    font-family: Arial;
+   
+}
+
+  input, select, textarea {
+            width: 90%;
+            height: 25px;
+            border-radius: 4px;
+            resize: none;
+            border-color: black;
+        }
+
+        .asterisco {
+            color: red;
+            position: relative;
+            top: 7px;
+            display: inline-block;
+            font-size: 20px;
+            font-weight: bolder;
+            min-width:20px;
+            
+        }
+
+        table {
+            font-size: 12px !important;
+        }
+
+        .tablainnova table {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;
+            margin: 45px;
+            
+            border-collapse: collapse;
+            text-align:center;
+        }
+
+         .tablainnova th {
+            font-size: 14px;
+            font-weight: normal;
+            padding: 4px;
+            background:  #61B473;
+            text-transform:uppercase;
+            color: white;
+            font:bolder;
+            
+        }
+
+         .tablainnova td {
+            padding: 4px;
+            background:#e8e4e4;
+            vertical-align:middle !important;
+            color: black;
+            border-top: 1px solid transparent;
+            text-align:center;
+        }
+
+         .tablainnova tr:hover td {
+            background: #dadada;
+            color: black;
+        }
+
+         input[type="checkbox"]{
+             position:relative;
+             left:0px;
+             border: 1px solid #c8c6c6;
+             width: 15px;
+             height: 15px;
+             border-radius: 2px;
+             margin: 0 5px 0 0;
+        }
+         input[type="checkbox"]+label{
+         
+           
+             font:red;
+        }
+          input[type="image"]{
+         padding:4px;
+        }
+
+.orangeTitle {
+    color:rgb(255, 106, 0);
+    font-style:italic;
+    
+}
+.general {
+     
+      background-color:#e7e7e7;
+    overflow : hidden;
+     overflow-y : scroll;
+      
+      background-size:100% 100%;
+   
+
+}
+html {
+    height: 100%
+}
+ #centrado {
+            background-color:white;
+            padding:15px;
+            text-align:justify;
+            margin:auto;
+         
+            width:600px;
+            height:80%;
+            position: relative;
+           
+        }
+        .fijo {
+            position: fixed;
+            text-align:center;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 3000;
+            background-color: rgba(0,0,0,.5);
+        }
+/*Elementos Adicionales*/
+.login {
+ 
+  background-color: #317ABF; 
+    background-size:100%;
+    height:330px;
+    position:relative;
+   
+    position: absolute;
+	top:50%;
+	left:50%;
+	width:380px;
+    border-radius:10px;
+    color:white;
+    padding:30px;
+	margin-left:-200px;
+	margin-top:-135px;
+	
+	
+
+}
+.Botones{
+    border:none!important;
+    width:25px  !important;
+    height:25px !important;
+}
+
+.Boton_PRM_LINK{
+    width:90%;
+    height:35px;
+    font-family:'Soberana Sans';
+    background-color:transparent;
+    border:none;
+    color:#317ABF;
+    font-size:large;
+    text-align:center;
+    vertical-align:middle;
+}
+.Boton_PRM{
+    width:90%;
+    height:35px;
+    font-family:'Soberana Sans';
+    background-color:#317ABF;
+    color:white;
+    text-align:center;
+    vertical-align:middle;
+
+}
+th{
+    text-align:center !important;
+}
+.formlogin {
+   color:white;
+    width:220px;
+    position:relative;
+    top:10px;
+    font-size:18px;
+    left:450px;
+    height:10px;
+}
+.footer {
+    background: url("../images/web/footer.png"); 
+    color:white;
+    text-align:center;
+    background-size: 100% 100%;
+    width: 100%;
+    min-height:35px;
+    position:relative;
+    top:50px;
+    
+}
+.Linea {
+    width:90%;
+     background: url("../images/web/title.png") no-repeat; 
+     background-size: 100% 100%;
+    font-weight:bold;
+    position:relative;
+    top:25px;
+    z-index:-1;
+    height:5px;
+    
+}
+.Titulo {
+    width:100%;
+     background: url("../images/web/title.png") no-repeat; 
+     background-size: 100% 100%;
+    font-weight:bold;
+    height:28px;
+    text-align:left;
+    color:white;
+    padding:3px;
+    padding-left:15px;
+}
+.header {
+    
+    width: 100%;
+  
+    position: relative;
+    
+}
+.menu {
+   width: 100%;
+   height:50px;
+   background-color:rgb(57, 57, 55);
+   position:relative;
+   vertical-align:middle;
+   text-align:justify;
+}
+
+
+/*Formularios*/
+
+.inputlogin {
+    border-radius:5px;
+    border:none;
+    
+    font-size:12px;
+    font-family:Arial;
+    color:rgba(128, 128, 128, 0.90);
+    height:30px;
+    padding:5px;
+    padding-left:5px;
+}
+input{
+    
+    border:solid rgba(128, 128, 128, 1) 1px;
+    font-size:12px;
+    font-family:Arial;
+   
+    height:22px;
+    padding:5px;
+    padding-left:5px;
+}
+select {
+    border:solid rgba(128, 128, 128, 1) 1px;
+    font-size:12px;
+    font-family:Arial;
+   
+    height:22px;
+   
+}
+.search {
+    border-radius:10px;
+    border:none;
+    
+    font-size:12px;
+    font-family:Arial;
+    color:rgba(128, 128, 128, 0.90);
+    height:20px;
+    padding:5px;
+    padding-left:5px;
+}

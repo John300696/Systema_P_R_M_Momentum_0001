@@ -1,0 +1,71 @@
+@font-face{
+          font-family: "Philosopher-Regular";
+          src: url("fonts/Philosopher-Regular.ttf") format("truetype")
+        }
+		.fondo img{
+          z-index: 1;
+          opacity: .5 ;
+        }
+		
+		.fondo{
+          overflow: hidden;
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          /*background-color: #3E5C89;*/
+        }
+		
+		/**LOGO**/
+
+		.logo{
+          width: 224px;
+          height: 140px;
+          background-color: transparent;
+          left: 20px;
+          top: 20px;
+          padding: 0;
+          
+        }.logo-slogan{
+          width: 100%;
+          height: 180px;
+          z-index: 2;
+          
+          background-color: #525c74;
+          padding: 0 0 0 0;
+        }
+		
+		/*SLIDER Y FECHA ACTUAL*/
+		
+		.carousel-img{
+          min-width: 100%;
+          max-height: 150px;
+          border-radius: 10px;
+        }.carousel-prm{
+          margin-top: 10px;
+          border-radius: 10px;
+		  
+		  
+        }.actual-date-layer{
+          margin-top: 10px;
+          background-color: #0c223f;
+          border-color: #0c223f;
+        }.shadowfilter {
+			-webkit-filter: drop-shadow(0px 0px 15px #fff);
+			 filter: drop-shadow(0px 0px 10px #fff);
+		}.btn-info.actual-date-layer .badge{
+		  color: #0c223f;
+}
+
+		/*MENU BARRA*/
+		.navbar-default .navbar-nav > li.active>a{
+          background-color: #525c74;
+          color: white;
+          }.navbar-default .navbar-nav > li>a:hover,.navbar-default .navbar-nav > li.active>a:hover{
+          background-color: #525c74;
+          color: white;
+          }
+        
+body{
+  background-color: #e7e7e7;
+
+}

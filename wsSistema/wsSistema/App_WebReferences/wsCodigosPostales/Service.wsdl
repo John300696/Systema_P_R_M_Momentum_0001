@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TblColonias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TblColoniasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TblColoniasResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeEdoCompania">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompaniaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MunicipioId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeEdoCompaniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraeEdoCompaniaResult" type="tns:Codigos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Codigos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Cve_CP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ZonaCirculacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstadoId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EstadoCompaniaId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Municipio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MunicipioId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MunicipioCompaniaId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Colonia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CompaniaId" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TraeMunCompania">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompaniaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MunicipioId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeMunCompaniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraeMunCompaniaResult" type="tns:Codigos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeCve_CP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MunicipioId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="CP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Colonia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeCve_CPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraeCve_CPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeMunicipiosEstado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeMunicipiosEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraeMunicipiosEstadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeEstados">
+        <s:complexType />
+      </s:element>
+      <s:element name="TraeEstadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraeEstadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeZonaCirculacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CompaniaId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeZonaCirculacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraeZonaCirculacionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeColoniasMunicipio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MunicipioId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeColoniasMunicipioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraeColoniasMunicipioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeCPColonia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EstadoId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MunicipioId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Colonia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TraeCPColoniaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TraeCPColoniaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="TblColoniasSoapIn">
+    <wsdl:part name="parameters" element="tns:TblColonias" />
+  </wsdl:message>
+  <wsdl:message name="TblColoniasSoapOut">
+    <wsdl:part name="parameters" element="tns:TblColoniasResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraeEdoCompaniaSoapIn">
+    <wsdl:part name="parameters" element="tns:TraeEdoCompania" />
+  </wsdl:message>
+  <wsdl:message name="TraeEdoCompaniaSoapOut">
+    <wsdl:part name="parameters" element="tns:TraeEdoCompaniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraeMunCompaniaSoapIn">
+    <wsdl:part name="parameters" element="tns:TraeMunCompania" />
+  </wsdl:message>
+  <wsdl:message name="TraeMunCompaniaSoapOut">
+    <wsdl:part name="parameters" element="tns:TraeMunCompaniaResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraeCve_CPSoapIn">
+    <wsdl:part name="parameters" element="tns:TraeCve_CP" />
+  </wsdl:message>
+  <wsdl:message name="TraeCve_CPSoapOut">
+    <wsdl:part name="parameters" element="tns:TraeCve_CPResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraeMunicipiosEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:TraeMunicipiosEstado" />
+  </wsdl:message>
+  <wsdl:message name="TraeMunicipiosEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:TraeMunicipiosEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraeEstadosSoapIn">
+    <wsdl:part name="parameters" element="tns:TraeEstados" />
+  </wsdl:message>
+  <wsdl:message name="TraeEstadosSoapOut">
+    <wsdl:part name="parameters" element="tns:TraeEstadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraeZonaCirculacionSoapIn">
+    <wsdl:part name="parameters" element="tns:TraeZonaCirculacion" />
+  </wsdl:message>
+  <wsdl:message name="TraeZonaCirculacionSoapOut">
+    <wsdl:part name="parameters" element="tns:TraeZonaCirculacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraeColoniasMunicipioSoapIn">
+    <wsdl:part name="parameters" element="tns:TraeColoniasMunicipio" />
+  </wsdl:message>
+  <wsdl:message name="TraeColoniasMunicipioSoapOut">
+    <wsdl:part name="parameters" element="tns:TraeColoniasMunicipioResponse" />
+  </wsdl:message>
+  <wsdl:message name="TraeCPColoniaSoapIn">
+    <wsdl:part name="parameters" element="tns:TraeCPColonia" />
+  </wsdl:message>
+  <wsdl:message name="TraeCPColoniaSoapOut">
+    <wsdl:part name="parameters" element="tns:TraeCPColoniaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TblColonias">
+      <wsdl:input message="tns:TblColoniasSoapIn" />
+      <wsdl:output message="tns:TblColoniasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeEdoCompania">
+      <wsdl:input message="tns:TraeEdoCompaniaSoapIn" />
+      <wsdl:output message="tns:TraeEdoCompaniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeMunCompania">
+      <wsdl:input message="tns:TraeMunCompaniaSoapIn" />
+      <wsdl:output message="tns:TraeMunCompaniaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeCve_CP">
+      <wsdl:input message="tns:TraeCve_CPSoapIn" />
+      <wsdl:output message="tns:TraeCve_CPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeMunicipiosEstado">
+      <wsdl:input message="tns:TraeMunicipiosEstadoSoapIn" />
+      <wsdl:output message="tns:TraeMunicipiosEstadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeEstados">
+      <wsdl:input message="tns:TraeEstadosSoapIn" />
+      <wsdl:output message="tns:TraeEstadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeZonaCirculacion">
+      <wsdl:input message="tns:TraeZonaCirculacionSoapIn" />
+      <wsdl:output message="tns:TraeZonaCirculacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeColoniasMunicipio">
+      <wsdl:input message="tns:TraeColoniasMunicipioSoapIn" />
+      <wsdl:output message="tns:TraeColoniasMunicipioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TraeCPColonia">
+      <wsdl:input message="tns:TraeCPColoniaSoapIn" />
+      <wsdl:output message="tns:TraeCPColoniaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TblColonias">
+      <soap:operation soapAction="http://tempuri.org/TblColonias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeEdoCompania">
+      <soap:operation soapAction="http://tempuri.org/TraeEdoCompania" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeMunCompania">
+      <soap:operation soapAction="http://tempuri.org/TraeMunCompania" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeCve_CP">
+      <soap:operation soapAction="http://tempuri.org/TraeCve_CP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeMunicipiosEstado">
+      <soap:operation soapAction="http://tempuri.org/TraeMunicipiosEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeEstados">
+      <soap:operation soapAction="http://tempuri.org/TraeEstados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeZonaCirculacion">
+      <soap:operation soapAction="http://tempuri.org/TraeZonaCirculacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeColoniasMunicipio">
+      <soap:operation soapAction="http://tempuri.org/TraeColoniasMunicipio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeCPColonia">
+      <soap:operation soapAction="http://tempuri.org/TraeCPColonia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TblColonias">
+      <soap12:operation soapAction="http://tempuri.org/TblColonias" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeEdoCompania">
+      <soap12:operation soapAction="http://tempuri.org/TraeEdoCompania" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeMunCompania">
+      <soap12:operation soapAction="http://tempuri.org/TraeMunCompania" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeCve_CP">
+      <soap12:operation soapAction="http://tempuri.org/TraeCve_CP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeMunicipiosEstado">
+      <soap12:operation soapAction="http://tempuri.org/TraeMunicipiosEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeEstados">
+      <soap12:operation soapAction="http://tempuri.org/TraeEstados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeZonaCirculacion">
+      <soap12:operation soapAction="http://tempuri.org/TraeZonaCirculacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeColoniasMunicipio">
+      <soap12:operation soapAction="http://tempuri.org/TraeColoniasMunicipio" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TraeCPColonia">
+      <soap12:operation soapAction="http://tempuri.org/TraeCPColonia" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://144.217.7.197/wsMomentumCodigosPostales/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://144.217.7.197/wsMomentumCodigosPostales/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
