@@ -39,21 +39,11 @@ public partial class Emision_Default : System.Web.UI.Page
                     case '1':
 
                         mvwPolizas.ActiveViewIndex = 1;
-                        //TraeOrdenesTrabajo();
-                        
-
+                       
                         break;
                 }
             }
         }
-    }
-
-    private void TraeOrdenesTrabajo()
-    {
-        DatosSql sql = new DatosSql();
-        DataTable tbl = sql.TraerDataTable("sp_GetPolicy", 0);
-        gvPolizas.DataSource = tbl;
-        gvPolizas.DataBind();
     }
 
     protected void gvOrdenesTrabajo_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -458,27 +448,19 @@ public partial class Emision_Default : System.Web.UI.Page
 
     private void GuardaPoliza()
     {
-        Boolean fileOK = false;
-        
-
+      
         String Mensaje = "";
 
         
-                String Documento = lblDocumentoCotizacion.Text;
+        String Documento = lblDocumentoCotizacion.Text;
 
-                DatosSql sql = new DatosSql();
+        DatosSql sql = new DatosSql();
+        sql.Ejecutar("sp_UpdateAsesorWorkOrder",lblOrdenTrabajoID.Text, Convert.ToInt32(ddlSolicito.SelectedValue.ToString()));
+        DataTable tbl = sql.TraerDataTable("sp_SavePolicy", lblidPoliza.Text, lblOrdenTrabajoID.Text, txtPolizaAnterior.Text, txtNumeroCOtizacion.Text, ddlTipoPoliza.SelectedValue.ToString(), lblidCLiente.Text, txtBeneficiarioPreferente.Text, Documento, txtNumPoliza.Text, txtInciso.Text, ddlCia.SelectedValue.ToString(), Convert.ToDateTime(txtFecEmision.Text), Convert.ToDateTime(txtInicioVigencia.Text), Convert.ToDateTime(txtFinVigencia.Text), ddlCObertura.SelectedValue.ToString(), ddlFormaPago.SelectedValue.ToString(), ddlMoneda.SelectedValue.ToString(), txtDescuento.Text.Replace("$","").Replace(",","").Replace(" ",""), txtPrimaNeta.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), txtPrimaTotal.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), txtPrimaTotal.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), txtFinanciamiento.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), txtDerrechoPoliza.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), 2, 1);
+        Mensaje = tbl.Rows[0]["msj"].ToString();
 
-                DataTable tbl = sql.TraerDataTable("sp_SavePolicy", lblidPoliza.Text, lblOrdenTrabajoID.Text, txtPolizaAnterior.Text, txtNumeroCOtizacion.Text, ddlTipoPoliza.SelectedValue.ToString(), lblidCLiente.Text, txtBeneficiarioPreferente.Text, Documento, txtNumPoliza.Text, txtInciso.Text, ddlCia.SelectedValue.ToString(), Convert.ToDateTime(txtFecEmision.Text), Convert.ToDateTime(txtInicioVigencia.Text), Convert.ToDateTime(txtFinVigencia.Text), ddlCObertura.SelectedValue.ToString(), ddlFormaPago.SelectedValue.ToString(), ddlMoneda.SelectedValue.ToString(), txtDescuento.Text.Replace("$","").Replace(",","").Replace(" ",""), txtPrimaNeta.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), txtPrimaTotal.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), txtPrimaTotal.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), txtFinanciamiento.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), txtDerrechoPoliza.Text.Replace("$", "").Replace(",", "").Replace(" ", ""), 2, 1);
-                Mensaje = tbl.Rows[0]["msj"].ToString();
-                ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "err_msg", "swal(\"Listo!\",\"" + Mensaje + "\", \"success\");", true);
-                lblidPoliza.Text = tbl.Rows[0]["Policy_ID"].ToString();
-
-
-
-            
-
-
-
+        ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "err_msg", "swal(\"Listo!\",\"" + Mensaje + "\", \"success\");", true);
+        lblidPoliza.Text = tbl.Rows[0]["Policy_ID"].ToString();
     }
 
 

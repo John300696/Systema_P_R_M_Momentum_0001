@@ -109,6 +109,41 @@
                         <br />
                         <br />
                     </div>
+                    <div class="col-sm-8">
+                        <h3>AGREGAR BONO</h3>
+                        <table style="width: 100%; border: none;">
+
+
+                            <tr>
+                               
+                                <td style="padding-right: 30px; height: 35px; width: 20%;">
+                                    CONCEPTO:<br />
+                                    <asp:TextBox ID="txtConcepto" runat="server"></asp:TextBox>
+
+                                </td>
+                                 <td style="padding-right: 30px; height: 35px; width: 20%;">
+                                     PRIMA NETA:<br />
+                                    <asp:TextBox ID="txtImporte" runat="server"></asp:TextBox>
+
+                                </td>
+                                <td style="padding-right: 30px; height: 35px; width: 10%;">
+                                     PORCENTAJE:<br />
+                                    <asp:TextBox ID="txtPorcentaje" runat="server" OnTextChanged="txtPorcentaje_TextChanged1" AutoPostBack="true"></asp:TextBox>
+
+                                </td>
+                                <td style="padding-right: 30px; height: 35px; width: 20%;">
+                                     COMISION:<br />
+                                    <asp:TextBox ID="txtComision" runat="server"></asp:TextBox>
+
+                                </td>
+                                <td>
+                                    <div class="col-sm-8 col-sm-offset-4">
+                                        <asp:Button ID="btnAgregarBono" runat="server" Text="AGREGAR" CssClass="Boton_PRM" OnClick="btnAgregarBono_Click" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                     <div class="col-sm-12">
                         <asp:GridView ID="gvAsignacionStatus" CssClass="table table-bordered" runat="server" Width="100%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" AutoGenerateColumns="false" OnRowCommand="gvAsignacionStatus_RowCommand">
                             <Columns>
@@ -257,11 +292,11 @@
                             <SortedDescendingHeaderStyle BackColor="#00547E" />
 
                         </asp:GridView>
-                     
+
                     </div>
                 </asp:View>
                 <asp:View ID="vwConsultaComisiones" runat="server">
-                     <div class="col-sm-6">
+                    <div class="col-sm-6">
                         <table style="width: 100%; border: none;">
 
 
@@ -277,7 +312,7 @@
                         </table>
                     </div>
                     <div class="col-sm-12">
-                         <asp:GridView ID="gvLiquidacionAsesor" CssClass="table table-bordered" runat="server" Width="100%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" AutoGenerateColumns="false" OnRowCommand="gvLiquidaciones_RowCommand">
+                        <asp:GridView ID="gvLiquidacionAsesor" CssClass="table table-bordered" runat="server" Width="100%" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" AutoGenerateColumns="false" OnRowCommand="gvLiquidaciones_RowCommand">
                             <Columns>
                                 <asp:ButtonField HeaderText="Ramo" DataTextField="SubRamo" />
                                 <asp:ButtonField HeaderText="Subramo" DataTextField="Ramo" />
@@ -305,9 +340,12 @@
                             <SortedDescendingHeaderStyle BackColor="#00547E" />
 
                         </asp:GridView>
-                            <br />
-                    TOTAL DE COMISIONES:
+                        <br />
+                        TOTAL DE COMISIONES:
                     <asp:Label ID="lblTOtalAsesor" runat="server"></asp:Label>
+                        <div class="col-sm-8 col-sm-offset-4">
+                            <asp:Button ID="btnExportarPDF" runat="server" Text="EXPORTAR COMISIONES" CssClass="Boton_PRM" OnClick="btnExportarPDF_Click" />
+                        </div>
                     </div>
                 </asp:View>
             </asp:MultiView>

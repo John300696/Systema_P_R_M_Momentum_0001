@@ -263,7 +263,18 @@ public class Extras
     {
         DatosSql sql = new DatosSql();
         DataTable tbl = sql.TraerDataTable("sp_GetCataloges",ID,value);
-
         return tbl;
+    }
+
+    public void GuardaMovimiento(int Usuario,int Poliza,String Descripcion,String Pagina)
+    {
+        DatosSql sql = new DatosSql();
+        DataTable tbl = sql.TraerDataTable("sp_SaveLogMovements",0,Descripcion,Usuario,Pagina);
+
+        if(tbl.Rows.Count>0)
+        {
+            int idLog = Convert.ToInt32(tbl.Rows[0]["LogID"].ToString());
+            sql.Ejecutar("sp_SaveLogMovementPolicy",0,idLog,Poliza);
+        }
     }
 }

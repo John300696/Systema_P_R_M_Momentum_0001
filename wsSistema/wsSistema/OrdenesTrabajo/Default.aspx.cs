@@ -408,7 +408,9 @@ public partial class OrdenesTrabajo_Default : System.Web.UI.Page
                         cUsuarios cu = new cUsuarios(Convert.ToInt32(ddlSolicito.SelectedValue.ToString()));
                         cu.TraeInfoUsuario(0);
                         String fileNamePDF = GenerarPDF();
-                       
+
+                        ex.GuardaMovimiento(Convert.ToInt32(HttpContext.Current.Session["Person_ID"].ToString()),Convert.ToInt32(lblidPoliza.Text),"Se realizo Orden de Trabajo para la Poliza", HttpContext.Current.Request.Url.AbsoluteUri);
+
                         ex.sendMail(cu.Email, "Se ha generado una Nueva Orden de Trabajo", "Nueva Orden de Trabajo", Server.MapPath("~/OrdenesTrabajo/PDF/" + fileNamePDF));
                         ifrPDF.Attributes.Add("src", "PDF/" + fileNamePDF);
                         mvwOrdenesTrabajo.ActiveViewIndex = 2;

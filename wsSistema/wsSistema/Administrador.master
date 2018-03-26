@@ -66,9 +66,8 @@
         }
     </script>
     <style>
-        .mayus
-        {
-            text-transform:uppercase;
+        .mayus {
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -212,9 +211,10 @@
                         <div class="content-wrapper" style="background-color: white !important;">
                             <!-- Content Header (Page header) -->
 
-
-                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                            </asp:ContentPlaceHolder>
+                            
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                               
                             <!-- Main content -->
                             <div class="col-sm-12">
                                 <br />
